@@ -1,3 +1,4 @@
+name: Lint Code Base
 #for every push and pull requests to the main branch 
 on:
   push:
