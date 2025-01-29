@@ -1,1 +1,28 @@
+#for every push and pull requests to the main branch 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Super Linter
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false # to parse and lint only added new codes
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JAVA: true
+          DEFAULT_BRANCH: main
+          # OUTPUT_DETAILS: 
+          #OUTPUT_FOLDER : 
+
+
+
+
 
